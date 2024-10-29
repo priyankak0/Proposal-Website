@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #F8C8DC;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .header_text {
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        #yesButton {
+            background-color: #FFB6C1;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #FFB6C1;
+            color: white;
+            position: relative;
+        }
+
+        .gif_container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Will you marry me?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="buttons rounded-box">
+            <div class="btn-container">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            var noButton = document.getElementById('noButton');
+            var x = Math.random() * (window.innerWidth - noButton.offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - noButton.offsetHeight) - 48;
+
+            noButton.style.position = 'absolute';  // Allow button to move freely
+            noButton.style.left = x + 'px';        // Concatenate x with 'px'
+            noButton.style.top = y + 'px';         // Concatenate y with 'px'
+        }
+    </script>
+</body>
+</html>
